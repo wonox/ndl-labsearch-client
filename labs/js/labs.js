@@ -209,7 +209,7 @@ require([
            ["publisher_sm", "出版者"],
            ["ndcFacet1_sm", "分類"],
            ["title_cjk_norm_text", "タイトル"],
-           ["author_cjk_norm_text", "著者"],
+           ["creator_cjk_norm_text", "著者"],
            ["__any__", "キーワード"],
            ["simple_text", "キーワード"],
            ["keyword_sm", "タグ"],
