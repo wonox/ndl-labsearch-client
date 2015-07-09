@@ -63,7 +63,6 @@
 
       //query = query.replace("\(","\&fq\=\(");
 
-      alert(query);
       if (query.match(/^\s*$/)){
         query = "*:*"
       }
