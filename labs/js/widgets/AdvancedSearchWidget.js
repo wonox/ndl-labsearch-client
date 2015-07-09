@@ -8,7 +8,7 @@
 }(function (){
 
 /**
- * Widget for advanced search form 
+ * Widget for advanced search form
  *
  * @class AdvancedSearchWidget
  * @augments AjaxSolr.AbstractTextWidget
@@ -27,7 +27,7 @@
         var target = this;
         self.search(target);
 
-        return false; 
+        return false;
       });
 
       // initをオーバーロードするときはselfを返さないとrequireがエラーになる
@@ -46,7 +46,24 @@
       var media_type_query = self.createMediaTypeQuery(target);
 
       /* 最終的なクエリの生成 */
-      query = $([query_keyword.replace(/(\s|　|(?:AND))+/g,"+"), advanced_query, media_type_query]).filter(function (){ return this != ""; }).get().join(" AND ");
+      // query = $([query_keyword.replace(/(\s|　|(?:AND))+/g,"+"), advanced_query, media_type_query]).filter(function (){ return this != ""; }).get().join(" AND ");
+      self.createMediaTypeQuery(target);
+      query = $([query_keyword.replace(/\s+/g, "+")
+      .replace(/\+AND\+/g, " AND ")
+      .replace(/\+OR\+/g, " OR ")
+      .replace(/\+NOT\+/g, " NOT ")
+      // , advanced_query, media_type_query])
+      , advanced_query])
+      // ])
+      .filter(function() {
+        return this !== "";
+      })
+      .get()
+      .join("");
+
+      //query = query.replace("\(","\&fq\=\(");
+
+      alert(query);
       if (query.match(/^\s*$/)){
         query = "*:*"
       }
@@ -92,7 +109,7 @@
         var field = self.keyword_fields[i];
         query_keyword_list.push(field + ':' + converted_keyword);
       }
-      if (keyword != "" && query_keyword_list.length > 0) { 
+      if (keyword != "" && query_keyword_list.length > 0) {
         var query_keyword = "("+query_keyword_list.join(" OR ")+")"
       }
 
@@ -120,19 +137,66 @@
       media_types = $(target).find("#mediatypes input:checkbox").filter(function (){ return $(this).attr("checked")=="checked" })
 
       if ($(target).find("#mediatypes input:checkbox").length != media_types.length){
-	media_types.each(function (){
-	  var q = "uiMediaType_sm:"+$(this).val();
-	  media_type_query.push(q);
-	});
-      }
+      //if ($(target).$("#mediatypes input[type='checkbox']").filter(":checked").length != media_types.length){
+	        // media_types.each(function (){
+	            //var q = "uiMediaType_sm:"+$(this).val();
+	            //media_type_query.push(q);
+	        //});
+          media_types.each(function() {
+            switch($(this).attr("id")){
+              case "mediatype_book":
+                q = "uiMediaType_sm:01";
+                break;
+              case "mediatype_magazine":
+                q = "uiMediaType_sm:02";
+                break;
+              case "mediatype_newsp":
+                q = "uiMediaType_sm:03";
+                break;
+              case "mediatype_electoric":
+                q = "uiMediaType_sm:04";
+                break;
+              case "mediatype_doctoral":
+                q = "uiMediaType_sm:05";
+                break;
+              case "mediatype_map":
+                q = "uiMediaType_sm:06";
+                break;
+              case "mediatype_audio":
+                q = "uiMediaType_sm:07";
+                break;
+              case "mediatype_movie":
+                q = "uiMediaType_sm:08";
+                break;
+              case "mediatype_tech":
+                q = "uiMediaType_sm:09";
+                break;
+              case "mediatype_zassaku":
+                q = "uiMediaType_sm:10";
+                break;
+              case "mediatype_etc":
+                q = "uiMediaType_sm:11";
+                break;
+            }
+            media_type_query.push(q);
+            });
+            }
 
-      if (media_type_query.length != 0) {
-	media_type_query = "("+media_type_query.join(" OR ")+")"
-      }else{ 
-	media_type_query = ""
+      if (media_type_query.length !== 0) {
+          self.manager.store.addByValue('fq', media_type_query.join(" OR "));
+          media_type_query = "(" + media_type_query.join(" OR ") + ")";
+      } else {
+          media_type_query = "";
       }
-
       return media_type_query;
+/*
+if (media_type_query.length != 0) {
+media_type_query = "("+media_type_query.join(" OR ")+")"
+}else{
+media_type_query = ""
+}
+return media_type_query;
+*/
     }
   });
 
