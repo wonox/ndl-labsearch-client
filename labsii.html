@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" href="http://ci.nii.ac.jp/d/images/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="shortcut icon" href="http://ci.nii.ac.jp/d/images/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="shortcut icon" href="http://ci.nii.ac.jp/d/images/favicon.ico" type="image/x-icon">
+
+	<!-- jQuery -->
+	<!--script src="http://ci.nii.ac.jp/d/js/analytics.js" async=""></script-->
+	<script type="text/javascript" src="http://ci.nii.ac.jp/d/js/jquery-1.js"></script>
+	<!-- Bootstrap JS -->
+	<script type="text/javascript" src="http://ci.nii.ac.jp/d/js/bootstrap.js"></script>
+	<!-- CSS -->
+	<link href="http://ci.nii.ac.jp/d/style/cinii.css" rel="stylesheet" type="text/css">
+	<link href="labs/css/labs.css" rel="stylesheet" type="text/css">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-style-type" content="text/css">
+	<meta http-equiv="content-script-type" content="text/javascript">
+
+	<!--script type="text/javascript" src="http://ci.nii.ac.jp/d/js/html5shiv-printshiv.js"></script-->
+	<!-- script type="text/javascript" src="http://ci.nii.ac.jp/d/js/respond.js"></script -->
+
+	<script type="text/javascript" src="http://ci.nii.ac.jp/d/js/common.js"></script>
+	<script type="text/javascript" src="http://ci.nii.ac.jp/d/js/changeDisplayMode.js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<!--[if IE 8.0]>
+	<link rel="stylesheet" type="text/css" href="/d/style/cinii-ie8.css">
+	<![endif]-->
+
+	<script type="text/javascript" src="http://ci.nii.ac.jp/d/js/ie8.js"></script>
+	<script type="text/javascript" src="http://ci.nii.ac.jp/d/js/customFormControls.js"></script>
+	<link rel="search" type="application/opensearchdescription+xml" title="CiNii Dissertations" href="http://ci.nii.ac.jp/d/opensearch/description.xml">
+	<title>NDLラボサーチ</title>
+</head>
+<body class="dissertations topscreen with_sidenavi">
+
+<!--黒帯-->
+	<p class="nav-sidebar clearfix">
+		<a id="facet-toggle" class="sidebar-toggle"><span class="glyphicon glyphicon-align-justify"></span> 絞り込み</a>
+		<a id="advanced-service-toggle" class="sidebar-toggle">ブックマーク <span class="glyphicon glyphicon-align-justify"></span></a>
+	</p>
+<!--黒帯-->
+
+	<nav class="navbar navbar-header">
+		<div class="navbar-topcontent">
+<!---->
+<span id="winsize2" style="display:inline-block; width:100%; color:#000; background:rgba(215, 44, 44, 0.2); padding:5px;"></span>
+<script type="text/javascript">
+window_load();
+window.onresize = window_load;
+function window_load() {
+	var sW,sH,s;
+	sW = window.innerWidth;
+	sH = window.innerHeight;
+
+	s = "Window Size：width = " + sW + " / height = " + sH;
+	document.getElementById("winsize2").innerHTML = s;
+}
+</script>
+<!---->
+
+
+
+			<!--ブランド名 ロゴ名の表示-->
+			<a href="http://ci.nii.ac.jp/d/" class="navbar-brand headerlogo">CiNii 国立情報学研究所 学術情報ナビゲータ[サイニィ]</a>
+
+			<!--トグルボタンの設置-->
+			<button type="button" class="navbar-toggle button-menu collapsed" data-toggle="collapse" data-target="#nav-content">
+				メニュー
+			</button>
+
+			<button type="button" class="navbar-toggle button-search collapsed" data-toggle="collapse" data-target="#searchbox">
+				検索
+			</button>
+
+		</div>
+		<div id="nav-content" class="collapse navbar-collapse headermenu">
+
+			<!--リンクのリスト メニューリスト-->
+			<ul class="nav navbar-nav menu-service-list">
+				<li><a href="http://ci.nii.ac.jp/ja" class="menu-service-item">日本の論文をさがす</a></li>
+				<li><a href="http://ci.nii.ac.jp/books/?l=ja" class="menu-service-item">大学図書館の本をさがす</a></li>
+				<li class="active"><a href="http://ci.nii.ac.jp/d/" class="menu-service-item">日本の博士論文をさがす</a></li>
+			</ul>
+
+			<!--リンクのリスト　ユーティリティ・ユーザー情報-->
+			<ul class="nav navbar-nav menu-utility-list">
+
+
+					<li><a href="http://lab.ndl.go.jp/ndls/labs.html" class="menu-utility-item">NDLラボサーチ（本家）</a></li>
+					<li><a href="http://lab.ndl.go.jp/cms/S" class="menu-utility-item">NDL Lab</a></li>
+					<li><a href="https://github.com/wonox/ndl-labsearch-client" class="menu-utility-item">Github</a></li>
+
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container body-wrap">
+
+		<div class="servicestop_information hidden-xs"><ul>
+<li><a href="http://support.nii.ac.jp/ja/news/cinii/20150611">【試験運用中】CiNii Dissertationsを公開しました。(2015年6月11日(木))</a></li>
+<!--
+<li><a href="#">CiNiiのサービスに関するアンケートを実施中です（期間：12月2日から12月26日まで）</a></li>
+<li><a href="#">[機関定額制] 利用継続手続きのご案内</a></li>
+-->
+</ul>
+</div>
+
+		<div class="jumbotron hidden-xs">
+			<div class="container">
+				<h1 class="homesystemname">
+					<img src="http://ci.nii.ac.jp/d/js/ci-home-dissertations-j.png" alt="NDL lab search -国立国会図書館の蔵書をさがす" class="homelogo" width="350" height="75">
+				</h1>
+			</div>
+		</div>
+
+
+		<div id="searchbox" class="searchbox">
+			<!-- form style="display: block;" name="searchform" action="/d/search" method="get" onsubmit="return searchDiss(this, false);" -->
+			<form style="display: block;" class="container" id="search" action = "return false;" role="form">
+				<!--input name="advanced" id="hidden_advanced" value="false" type="hidden" -->
+				<!-- input name="count" id="hidden_count" value="20" type="hidden" -->
+				<!-- input name="sortorder" id="hidden_sortorder" value="1" type="hidden" -->
+				<div class="dissertations_search searchFormContainer">
+
+					<div class="validation_error" style="display:none;"><p></p></div>
+
+					<div class="searchformcontents container-fluid">
+						<div class="searchboxheader row">
+
+							<div class="col-xs-12 col-sm-10 col-sm-offset-2">
+								<div style="visibility: visible;" class="tab_index">
+									<ul class="tab_index_list">
+										<li class="tab_index_item tab_index_item-active">
+											<a id="tab-dissertations_search" class="tab-index-content">NDL ラボサーチ</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div style="margin-bottom: 0px;" class="row form-tabcontent form-dissertations">
+							<div class="col-xs-12 col-sm-10 col-sm-offset-2">
+								<div class="row row-textform">
+									<div class="col-xs-9 col-sm-9 col-form">
+										<!--input name="q" class="main_srchterm searchforminput" onkeypress="return submitByEnter(this);" placeholder="フリーワード" type="text" -->
+										<input id="keyword" name="keyword" class="main_srchterm searchforminput" autocomplete="on" type="text">
+									</div>
+									<div class="col-xs-3 col-sm-3">
+										<!-- button class="btn searchbtn" onclick="return searchDiss(this.form, false);">検索</button-->
+										<button class="btn searchbtn" id="searchbutton" class="searchbutton" type="submit" name="search-button">検索</button>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="col-xs-12 col-sm-10 col-sm-offset-2">
+								<div class="row filter_radiobtnbox">
+									<div class="col-xs-12 col-sm-9 filter_segmentControl">
+										<div class="row">
+											<div class="col-xs-12 col-sm-3 filter_radiobtnbox-segmentarea1">
+												<label for="filter_all_advanced" class="segment1 checked"><input style="opacity: 0; margin: 0px; width: 0px; overflow: hidden;" name="range" value="0" id="filter_all_advanced" checked="checked" type="radio">すべて</label>
+											</div>
+											<div class="col-xs-12 col-sm-9 filter_radiobtnbox-segmentarea2">
+												<label for="filter_fulltext_advanced" class="segment2"><input style="opacity: 0; margin: 0px; width: 0px; overflow: hidden;" name="range" value="1" id="filter_fulltext_advanced" type="radio">本文あり</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-3 advsearchbtn-area">
+										<a href="#advanced" class="advanced_button btn-toggle-advsearch collapsed"><span class="btn-toggle-advsearch-label">詳細検索</span></a>
+									</div>
+								</div>
+							</div>
+
+
+							<!--div aria-expanded="false" id="advanced_search" class="col-xs-12 col-sm-12 advanced_search collapse" -->
+							<div id="advanced" class="col-xs-12 col-sm-12 advanced_search">
+								<div class="row">
+								<!--あどばんすど-->
+								<!--div class="col-md-1"></div-->
+								<div class="col-xs-12 col-sm-8">
+									<div class="row row-textform">
+													<div class="col-xs-12 col-sm-3 searchformlabel"><label for="sopt1">タイトル</label></div>
+													<div class="col-xs-12 col-sm-9 col-form"><input type="text" id="title" name="title_cjk_norm_text" class="searchforminput" /></div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<div class="row row-textform">
+													<div class="col-xs-12 col-sm-5 searchformlabel"><label for="sopt2">著者名</label></div>
+													<div class="col-xs-12 col-sm-7 col-form"><input type="text" id="author" name="creator_cjk_norm_text" class="searchforminput" /></div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<div class="row row-textform">
+											<div class="col-xs-12 col-sm-6 searchformlabel"><label for="publisher">出版者</label></div>
+											<div class="col-xs-12 col-sm-6 col-form"><input type="text" id="publisher" name="publisher_cjk_norm_text" class="searchforminput" /></div>
+								 </div>
+							  </div>
+								<div class="col-xs-12 col-sm-4">
+									<div class="row row-textform">
+										<div class="col-xs-12 col-sm-6 searchformlabel"><label for="subject">件名</label></div>
+										<div class="col-xs-12 col-sm-6 col-form"><input type="text" id="subject" name="subject_cjk_norm_text" class="searchforminput" /></div>
+				           </div>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<div class="row row-textform">
+											<div class="col-xs-12 col-sm-6 searchformlabel"><label for="ndc">分類記号</label></div>
+											<div class="col-xs-12 col-sm-6 col-form"><input type="text" id="ndc" name="ndc_class_sm" class="searchforminput" /></div>
+									 </div>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<div class="row row-textform">
+										<div class="col-xs-12 col-sm-6 searchformlabel"><label for="isbn">ISBN</label></div>
+										<div class="col-xs-12 col-sm-6 col-form"><input type="text" id="isbn" name="isbn_sm" class="searchforminput" /></div>
+									</div>
+							 </div>
+						</div>
+							<div class="col-xs-12 col-sm-12">
+							<div class="row">
+					    <div id="mediatypes">
+									<label class="caption"><span>資料種別</span></label>
+									<label class="checkbox-inline"><input id="mediatype_book" type="checkbox" value="1"  name="ui_media_type_sm" checked="checked" class="searchforminput" />本</label>
+									<label class="checkbox-inline"><input id="mediatype_magazine" type="checkbox" value="2"  name="ui_media_type_sm" checked="checked">雑誌</label>
+									<label class="checkbox-inline"><input id="mediatype_newsp" type="checkbox" value="3"  name="ui_media_type_sm" checked="checked">新聞</label>
+									<label class="checkbox-inline"><input id="mediatype_electoric" type="checkbox" value="4"  name="ui_media_type_sm" checked="checked">電子資料</label>
+									<label class="checkbox-inline"><input id="mediatype_doctoral" type="checkbox" value="5"  name="ui_media_type_sm" checked="checked">博士論文</label>
+									<label class="checkbox-inline"><input id="mediatype_map" type="checkbox" value="6"  name="ui_media_type_sm" checked="checked">地図</label>
+									<label class="checkbox-inline"><input id="mediatype_audio" type="checkbox" value="7"  name="ui_media_type_sm" checked="checked">録音資料</label>
+									<label class="checkbox-inline"><input id="mediatype_movie" type="checkbox" value="8"  name="uiMediaType_sm" checked="checked">映像資料</label>
+									<label class="checkbox-inline"><input id="mediatype_tech" type="checkbox" value="9"  name="ui_media_type_sm" checked="checked">規格・テクニカルレポート類</label>
+									<label class="checkbox-inline"><input id="mediatype_zassaku" type="checkbox" value="10" name="ui_media_type_sm" checked="checked">雑誌記事索引</label>
+									<label class="checkbox-inline"><input id="mediatype_etc" type="checkbox" value="11" name="ui_media_type_sm" checked="checked">その他</label>
+									<button class="btn btn-default btn-xs" id="switch-mediatypes">すべて選択/解除</button>
+							</div>
+						</div></div>
+							<!-- /#mediatypes -->
+					<!--あどばんすどおわり-->
+
+
+							<div id="btn-toggle-advsearch-bottom" class="col-xs-12 visible-xs-block advsearchbtn-area">
+								<a class="btn-toggle-advsearch collapsed" data-toggle="collapse" data-target="#advanced_search"><span class="btn-toggle-advsearch-label">閉じる</span></a>
+							</div>
+						</div>
+					</div><!-- end of .advanced_search -->
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<!-- end of div#searchbox -->
+<script type="text/javascript" src="/d/js/searchbox_disclosure.js?V150526"></script>
+<script type="text/javascript">
+	initSearchBox('article', false);
+</script>
+
+<!--end of body-wrap-->
+
+
+
+
+
+
+
+
+
+
+		<!--ここから下が検索結果の表示欄-->
+		<div id="main" class="container">
+			<div class="row">
+				<div id="result" class="col-md-7 col-md-push-2">
+					<div id="result-header">
+						<h2>検索結果一覧<span id="pager-header"></span></h2>
+						<div id="pager-sort"></div>
+					</div>
+					<div id="docs"></div>
+					<div id="result-footer">
+						<div id="navigation">
+							<ul id="pager"></ul>
+						</div>
+					</div>
+				</div>
+				<div id="facet" class="sidebar col-md-2 col-md-pull-7">
+					<h2 class="mainlabel">検索結果の絞り込み</h2>
+
+					<ul id="selection"></ul>
+
+					<div id="ui_media_type-facet"></div>
+					<div id="issued-facet"></div>
+					<div id="publisher-facet"></div>
+					<div id="ndc-facet"></div>
+					<div id="tagcloud"></div>
+				</div> <!-- /.col -->
+				<div id="advanced-service" class="sidebar col-md-3">
+					<h2 class="mainlabel">ブックマーク</h2>
+					<div id="bookmarks"></div>
+					<div id="recommendation"></div>
+				</div>
+			</div> <!-- /.row -->
+		</div>
+		<!--ここまでが検索結果の表示欄-->
+
+
+
+
+
+
+
+
+
+
+	<footer class="footer">
+		<div class="footer-wrap">
+			<div class="displaymode visible-xs">
+				<div class="modelist">
+					<div class="modeitem">
+						<span id="btnSP" class="selected">スマートフォン版</span>
+					</div>
+					|
+					<div class="modeitem">
+						<a id="btnPC" href="#" onclick="selectModePc();return false;">PC版</a>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+			<div class="footer-linkblock ftb-about">
+				<ul class="ft-group">
+					<li><p class="ft-heading">CiNiiについて</p>
+						<ul class="ft-list">
+							<li><a href="http://support.nii.ac.jp/ja/cinii/cinii_outline">CiNiiについて</a></li>
+							<li><a href="http://ci.nii.ac.jp/cinii/servlet/DirTop">収録刊行物について</a></li>
+							<li><a href="http://support.nii.ac.jp/ja/cinii/terms">利用規約</a></li>
+							<li><a href="http://support.nii.ac.jp/ja/cinii/contact">お問い合わせ</a></li>
+							<li><a href="http://www.nii.ac.jp/">国立情報学研究所 (NII)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-linkblock ftb-help">
+				<ul class="ft-group">
+					<li><p class="ft-heading">ヘルプ</p>
+						<ul class="ft-list">
+							<li><p><a href="http://support.nii.ac.jp/ja/cia/manual_outline">CiNii Articles - 日本の論文をさがす</a></p>
+							</li>
+							<li><p><a href="http://support.nii.ac.jp/ja/cib/manual_outline">CiNii Books - 大学図書館の本をさがす</a></p>
+							</li>
+							<li><p><a href="http://support.nii.ac.jp/ja/cid/manual_outline">CiNii Dissertations - 日本の博士論文をさがす</a></p>
+							</li>
+							<li><p><a href="http://support.nii.ac.jp/ja/cinii/api/api_outline">メタデータ・API</a></p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-linkblock ftb-info">
+				<ul class="ft-group">
+					<li><p class="ft-heading">新着情報</p>
+						<ul class="ft-list">
+							<li> <a href="http://support.nii.ac.jp/ja/news/cinii">お知らせ</a></li>
+							<li> <a href="http://support.nii.ac.jp/ja/news/cinii/feed">RSS</a></li>
+							<li><a href="http://twitter.com/cinii_jp">Twitter</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="footer-linkblock ftb-service">
+				<ul class="ft-group">
+					<li><p class="ft-heading">NIIのコンテンツサービス</p>
+						<ul class="ft-list">
+							<li><a href="http://kaken.nii.ac.jp/">KAKEN - 科学研究費助成事業データベース</a></li>
+							<li><a href="http://jairo.nii.ac.jp/">JAIRO - 学術機関リポジトリポータル</a></li>
+							<li><a href="http://reo.nii.ac.jp/">NII-REO - 電子リソースリポジトリ</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+
+	</footer>
+	<!-- NDL Search Portableの起動 -->
+	<script src="labs/js/config.js"></script>
+	<script src="labs/js/lib/require.js"></script>
+	<script src="labs/js/labs.js"></script>
+
+</body></html>
