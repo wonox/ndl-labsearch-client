@@ -3,6 +3,10 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 	<meta name="format-detection" content="telephone=no">
+
+	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+
 	<link rel="icon" href="http://ci.nii.ac.jp/d/images/favicon.ico" type="image/vnd.microsoft.icon">
 	<link rel="shortcut icon" href="http://ci.nii.ac.jp/d/images/favicon.ico" type="image/vnd.microsoft.icon">
 	<link rel="shortcut icon" href="http://ci.nii.ac.jp/d/images/favicon.ico" type="image/x-icon">
@@ -35,6 +39,30 @@
 	<script type="text/javascript" src="http://ci.nii.ac.jp/d/js/customFormControls.js"></script>
 	<link rel="search" type="application/opensearchdescription+xml" title="CiNii Dissertations" href="http://ci.nii.ac.jp/d/opensearch/description.xml">
 	<title>NDLラボサーチ</title>
+
+	<style type="text/css">
+	.homesystemname {
+		font-size: 60px;
+		font-family: 'Rock Salt', cursive;
+	}
+	body {
+		font-size: 10px;
+		font-family: 'Noto Sans Japanese', sans-serif;
+	}
+	.homesystemname-sub {
+		font-size: 20px;
+		font-weight: 500;
+		font-family: 'Noto Sans Japanese', sans-serif;
+	}
+	@media (max-width: 767px) {
+	.homesystemname-resp {
+		font-size: 20px;
+		font-weight: 500;
+		font-family: 'Rock Salt', cursive;
+	}}
+	</style>
+
+
 </head>
 <body class="dissertations topscreen with_sidenavi">
 
@@ -66,7 +94,7 @@ function window_load() {
 
 
 			<!--ブランド名 ロゴ名の表示-->
-			<a href="http://ci.nii.ac.jp/d/" class="navbar-brand headerlogo">CiNii 国立情報学研究所 学術情報ナビゲータ[サイニィ]</a>
+			<span class="homesystemname-resp">NDL lab search</span>
 
 			<!--トグルボタンの設置-->
 			<button type="button" class="navbar-toggle button-menu collapsed" data-toggle="collapse" data-target="#nav-content">
@@ -101,19 +129,13 @@ function window_load() {
 
 	<div class="container body-wrap">
 
-		<div class="servicestop_information hidden-xs"><ul>
-<li><a href="http://support.nii.ac.jp/ja/news/cinii/20150611">【試験運用中】CiNii Dissertationsを公開しました。(2015年6月11日(木))</a></li>
-<!--
-<li><a href="#">CiNiiのサービスに関するアンケートを実施中です（期間：12月2日から12月26日まで）</a></li>
-<li><a href="#">[機関定額制] 利用継続手続きのご案内</a></li>
--->
-</ul>
-</div>
-
 		<div class="jumbotron hidden-xs">
 			<div class="container">
 				<h1 class="homesystemname">
-					<img src="http://ci.nii.ac.jp/d/js/ci-home-dissertations-j.png" alt="NDL lab search -国立国会図書館の蔵書をさがす" class="homelogo" width="350" height="75">
+					NDL lab search
+				</h1>
+				<h1 class="homesystemname-sub">
+					国立国会図書館の蔵書をさがす
 				</h1>
 			</div>
 		</div>
@@ -162,10 +184,10 @@ function window_load() {
 									<div class="col-xs-12 col-sm-9 filter_segmentControl">
 										<div class="row">
 											<div class="col-xs-12 col-sm-3 filter_radiobtnbox-segmentarea1">
-												<label for="filter_all_advanced" class="segment1 checked"><input style="opacity: 0; margin: 0px; width: 0px; overflow: hidden;" name="range" value="0" id="filter_all_advanced" checked="checked" type="radio">すべて</label>
+												<!--label for="filter_all_advanced" class="segment1 checked"><input style="opacity: 0; margin: 0px; width: 0px; overflow: hidden;" name="range" value="0" id="filter_all_advanced" checked="checked" type="radio">すべて</label-->
 											</div>
 											<div class="col-xs-12 col-sm-9 filter_radiobtnbox-segmentarea2">
-												<label for="filter_fulltext_advanced" class="segment2"><input style="opacity: 0; margin: 0px; width: 0px; overflow: hidden;" name="range" value="1" id="filter_fulltext_advanced" type="radio">本文あり</label>
+												<!--label for="filter_fulltext_advanced" class="segment2"><input style="opacity: 0; margin: 0px; width: 0px; overflow: hidden;" name="range" value="1" id="filter_fulltext_advanced" type="radio">本文あり</label-->
 											</div>
 										</div>
 									</div>
@@ -303,93 +325,9 @@ function window_load() {
 		<!--ここまでが検索結果の表示欄-->
 
 
-
-
-
-
-
-
-
-
 	<footer class="footer">
 		<div class="footer-wrap">
-			<div class="displaymode visible-xs">
-				<div class="modelist">
-					<div class="modeitem">
-						<span id="btnSP" class="selected">スマートフォン版</span>
-					</div>
-					|
-					<div class="modeitem">
-						<a id="btnPC" href="#" onclick="selectModePc();return false;">PC版</a>
-					</div>
-				</div>
-			</div>
-
-
-
-
-
-
-
-
-
-
-
-			<div class="footer-linkblock ftb-about">
-				<ul class="ft-group">
-					<li><p class="ft-heading">CiNiiについて</p>
-						<ul class="ft-list">
-							<li><a href="http://support.nii.ac.jp/ja/cinii/cinii_outline">CiNiiについて</a></li>
-							<li><a href="http://ci.nii.ac.jp/cinii/servlet/DirTop">収録刊行物について</a></li>
-							<li><a href="http://support.nii.ac.jp/ja/cinii/terms">利用規約</a></li>
-							<li><a href="http://support.nii.ac.jp/ja/cinii/contact">お問い合わせ</a></li>
-							<li><a href="http://www.nii.ac.jp/">国立情報学研究所 (NII)</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-			<div class="footer-linkblock ftb-help">
-				<ul class="ft-group">
-					<li><p class="ft-heading">ヘルプ</p>
-						<ul class="ft-list">
-							<li><p><a href="http://support.nii.ac.jp/ja/cia/manual_outline">CiNii Articles - 日本の論文をさがす</a></p>
-							</li>
-							<li><p><a href="http://support.nii.ac.jp/ja/cib/manual_outline">CiNii Books - 大学図書館の本をさがす</a></p>
-							</li>
-							<li><p><a href="http://support.nii.ac.jp/ja/cid/manual_outline">CiNii Dissertations - 日本の博士論文をさがす</a></p>
-							</li>
-							<li><p><a href="http://support.nii.ac.jp/ja/cinii/api/api_outline">メタデータ・API</a></p>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-			<div class="footer-linkblock ftb-info">
-				<ul class="ft-group">
-					<li><p class="ft-heading">新着情報</p>
-						<ul class="ft-list">
-							<li> <a href="http://support.nii.ac.jp/ja/news/cinii">お知らせ</a></li>
-							<li> <a href="http://support.nii.ac.jp/ja/news/cinii/feed">RSS</a></li>
-							<li><a href="http://twitter.com/cinii_jp">Twitter</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-
-			<div class="footer-linkblock ftb-service">
-				<ul class="ft-group">
-					<li><p class="ft-heading">NIIのコンテンツサービス</p>
-						<ul class="ft-list">
-							<li><a href="http://kaken.nii.ac.jp/">KAKEN - 科学研究費助成事業データベース</a></li>
-							<li><a href="http://jairo.nii.ac.jp/">JAIRO - 学術機関リポジトリポータル</a></li>
-							<li><a href="http://reo.nii.ac.jp/">NII-REO - 電子リソースリポジトリ</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
 		</div>
-
-
 
 
 	</footer>
